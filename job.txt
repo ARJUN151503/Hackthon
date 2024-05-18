@@ -107,6 +107,112 @@ CREATE TABLE ApplicantJobs (
 
 flow diagram:
 
+                                      +---------------+
+                                      |  Continents  |
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  Countries  |
+                                      |  (region_id)  |
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  Departments  |
+                                      |  (dept_id)    |
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  JobTypes     |
+                                      |  (job_type_cd) |
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  JobStatusCodes|
+                                      |  (job_status_cd)|
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  ApplStatusCodes|
+                                      |  (appl_status_cd)|
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  EducationLevels|
+                                      |  (edu_level_cd)  |
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  EducationTypes|
+                                      |  (edu_type_cd)  |
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  Jobs          |
+                                      |  (job_id)      |
+                                      |  (job_title)   |
+                                      |  (job_desc)    |
+                                      |  (job_type_cd) |
+                                      |  (dept_id)     |
+                                      |  (job_status_cd)|
+                                      |  (country_cd)  |
+                                      |  (date_opened) |
+                                      |  (date_closed) |
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  Applicants    |
+                                      |  (appl_id)     |
+                                      |  (first_name)  |
+                                      |  (last_name)   |
+                                      |  (email)      |
+                                      |  (phone_num)   |
+                                      |  (address)    |
+                                      |  (city)       |
+                                      |  (state)      |
+                                      |  (zip)        |
+                                      |  (country_cd)  |
+                                      |  (appl_status_cd)|
+                                      |  (edu_level_cd)|
+                                      |  (edu_type_cd) |
+                                      |  (resume_file_name)|
+                                      |  (cover_letter_text)|
+                                      |  (date_applied) |
+                                      |  (employee_flag)|
+                                      |  (current_employer_name)|
+                                      |  (year_of_exp) |
+                                      +---------------+
+                                             |
+                                             |
+                                             v
+                                      +---------------+
+                                      |  ApplicantJobs|
+                                      |  (appl_id)     |
+                                      |  (job_id)      |
+                                      |  (appl_status_cd)|
+                                      |  (date_applied) |
+                                      |  (written_test_date)|
+                                      |  (interview_date)|
+                                      |  (interview2_date)|
+                                      +---------------+
+
 Continents
   |
   |--- Countries (region_id)
