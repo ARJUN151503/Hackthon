@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Enter Job Data</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: #333;
+	text-align: center;
+}
+
+form {
+	margin: 20px auto;
+	width: 50%;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	padding: 10px;
+}
+
+label {
+	font-weight: bold;
+}
+
+input[type="text"], select, textarea, input[type="date"], input[type="submit"]
+	{
+	width: 100%;
+	padding: 8px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+input:required:invalid, select:required:invalid, textarea:required:invalid
+	{
+	border-color: red;
+}
+
+input:required:valid, select:required:valid, textarea:required:valid {
+	border-color: green;
+}
+</style>
+</head>
+<body>
+	<h1>Enter Job Data</h1>
+	<form method="post" action="" name="job_form"
+		onsubmit="return validateJobForm()">
+		<table>
+			<tr>
+				<td><label for="job_title">Job Title:</label></td>
+				<td><input type="text" id="job_title" name="job_title" required></td>
+			</tr>
+			<tr>
+				<td><label for="job_type">Job Type:</label></td>
+				<td><select id="job_type" name="job_type" required>
+						<option value="">Select Job Type</option>
+						<option value="IT">IT Manager</option>
+						<option value="HR">HR Manager</option>
+						<option value="Sales Manager">Sales Manager</option>
+						<option value="Developer">Developer</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for="department">Department:</label></td>
+				<td><select id="department" name="department" required>
+						<option value="">Select Department</option>
+						<option value="IT">IT</option>
+						<option value="HR">HR</option>
+						<option value="Sales Manager">Sales</option>
+						<option value="Developer">Developer</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for="country">Country:</label></td>
+				<td><select id="country" name="country" required>
+						<option value="">Select Country</option>
+						<option value="USA">USA</option>
+						<option value="Canada">Canada</option>
+						<option value="Mexico">Mexico</option>
+						<option value="UK">UK</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for="job_desc">Job Description:</label></td>
+				<td><textarea id="job_desc" name="job_desc" required></textarea></td>
+			</tr>
+			<tr>
+				<td><label for="opening_date">Opening Date:</label></td>
+				<td><input type="date" id="opening_date" name="opening_date"
+					required></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Submit"></td>
+			</tr>
+		</table>
+	</form>
+	<script>
+		function validateJobForm() {
+			// Validate required fields
+			if (!document.getElementById("job_title").value) {
+				alert("Job title is required");
+				return false;
+			}
+			if (!document.getElementById("job_type").value) {
+				alert("Job type is required");
+				return false;
+			}
+			if (!document.getElementById("department").value) {
+				alert("Department is required");
+				return false;
+			}
+			if (!document.getElementById("country").value) {
+				alert("Country is required");
+				return false;
+			}
+			if (!document.getElementById("job_desc").value) {
+				alert("Job description is required");
+				return false;
+			}
+			if (!document.getElementById("opening_date").value) {
+				alert("Opening date is required");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</body>
+</html>
