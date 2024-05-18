@@ -100,4 +100,65 @@ CREATE TABLE ApplicantJobs (
   FOREIGN KEY (appl_status_cd) REFERENCES ApplStatusCodes(appl_status_cd)
 );
 
- 
+
+
+
+
+
+flow diagram:
+
+Continents
+  |
+  |--- Countries (region_id)
+  |
+  |--- Departments (dept_id)
+  |
+  |--- JobTypes (job_type_cd)
+  |
+  |--- JobStatusCodes (job_status_cd)
+  |
+  |--- ApplStatusCodes (appl_status_cd)
+  |
+  |--- EducationLevels (edu_level_cd)
+  |
+  |--- EducationTypes (edu_type_cd)
+
+Countries
+  |
+  |--- Jobs (country_cd)
+
+Departments
+  |
+  |--- Jobs (dept_id)
+
+JobTypes
+  |
+  |--- Jobs (job_type_cd)
+
+JobStatusCodes
+  |
+  |--- Jobs (job_status_cd)
+
+ApplStatusCodes
+  |
+  |--- Applicants (appl_status_cd)
+
+EducationLevels
+  |
+  |--- Applicants (edu_level_cd)
+
+EducationTypes
+  |
+  |--- Applicants (edu_type_cd)
+
+Jobs
+  |
+  |--- Applicants (appl_id)
+
+Applicants
+  |
+  |--- ApplicantJobs (appl_id)
+
+ApplicantJobs
+  |
+  |--- Jobs (job_id)
